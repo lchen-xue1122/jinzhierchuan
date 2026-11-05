@@ -2,6 +2,27 @@
 <html lang="zh-CN">
   </script>
 </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var s1 = document.getElementById('splash');
+    if (s1) s1.remove();
+    var s2 = document.getElementById('splash-mustread');
+    if (s2) s2.remove();
+
+    var lockIds = ['lock-screen', 'lock', 'auth', 'login', 'password-screen', 'gate'];
+    lockIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.remove();
+    });
+    var inputs = document.querySelectorAll('input[type="password"]');
+    inputs.forEach(function(input) {
+      input.remove();
+    });
+  });
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-visual">
 <title>Mochi 字卡传讯（完全免费·禁止倒卖）</title>
