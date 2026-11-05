@@ -3,20 +3,17 @@
 <head>
 <script>
 window.addEventListener('load', function() {
-  var ids = ['splash', 'splash-mustread', 'lock-screen', 'lock', 'auth', 'login', 'password-screen', 'gate'];
-  for(var i=0; i<ids.length; i++) {
-    var el = document.getElementById(ids[i]);
-    if (el) el.remove();
-  }
-  var pwds = document.querySelectorAll('input[type="password"]');
-  for(var j=0; j<pwds.length; j++) {
-    pwds[j].remove();
-  }
-});
-</script>
-      input.remove();
+  setTimeout(function() {
+    var badIds = ['splash', 'splash-mustread', 'lock-screen', 'lock', 'auth', 'login', 'password-screen', 'gate'];
+    badIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.remove();
     });
-  });
+    document.querySelectorAll('input[type="password"]').forEach(function(el) {
+      el.remove();
+    });
+  }, 100); 
+});
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-visual">
